@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="./css/enter.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/enter.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/enter.js')}}"></script>
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
@@ -53,12 +56,16 @@ body, html {height: 100%}
     </div>
 
     <div id="Text" class="w3-container borders task" style="display:none">
-      <textarea class="textbox" style="resize:none"></textarea>
-      <br><br>
+      <form id="summarize-form">
+      <textarea class="textbox" style="resize:none" id="text-entry" name="summary_input"></textarea>
+      <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="ratio" onchange="sliderChange(this)">
+      <p>Ratio: <span id="ratio-value">0.5</span></p>
+      </div>
+    </form>
       <button class="file-upload-btn" type="button" onclick="summarize()">Summarize</button>
     </div>
   </div>
 </div>
-<script type="text/javascript" src="./js/enter.js"></script>
 </body>
 </html>

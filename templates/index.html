@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
     background-color: black;
-    background-image: url(./img/background.gif);
+    background-image: url("{{ url_for('static',filename='img/background.gif')}}");
     min-height: 100%;
     background-size: cover;
     background-position-x: center;
@@ -34,7 +36,7 @@ span{
   </div>
   <h1 class="heading w3-display-topmiddle" style="padding-top: 10%">The future of <span>M</span>achine <span>L</span>earning is here.</h1>
   <div class="w3-display-middle">
-    <h2 class="heading"><a href="./enter.html">Enter</a></h2>
+    <h2 class="heading"><a href="./enter">Enter</a></h2>
   </div>
 </div>
 
